@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mats'oele Monosi | Photographer & Content Creator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link {
+            color: #e5e7eb;
+            text-shadow: 0 0 5px rgba(245, 158, 11, 0.3);
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #f59e0b;
+            text-shadow: 0 0 10px rgba(245, 158, 11, 0.7);
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #f59e0b;
+            box-shadow: 0 0 10px #f59e0b;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active::after {
+            width: 100%;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #f59e0b;
+            border: 3px solid #fff;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: #e5e7eb;
+        }
+        
+        @media (min-width: 1024px) {
+            .timeline-item::before {
+                left: -35px;
+            }
+            
+            .timeline::before {
+                left: 29px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-gray-800 shadow-md z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-white">
+                    <span class="text-amber-500">Mats'oele</span> Monosi
+                </a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#testimonials" class="nav-link">Testimonials</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                
+                <button class="md:hidden focus:outline-none" id="menu-toggle">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden flex-col space-y-4 mt-4" id="mobile-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center bg-gray-900 overflow-hidden">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/01eea1d1-cc7e-41f4-b289-a5c5d8ae372b.png" alt="Breathtaking landscape photography of African savanna at golden hour with sun setting behind acacia trees" class="absolute w-full h-full object-cover">
+        <div class="absolute inset-0 hero-gradient"></div>
+        
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">Mats'oele Monosi</h1>
+            <div class="text-xl md:text-2xl text-amber-400 mb-8">
+                <span class="typed-text" data-typed='["Photographer", "Content Creator", "M&E Specialist"]'></span>
+            </div>
+            <p class="text-gray-300 max-w-2xl mx-auto mb-10">Capturing moments, telling stories, and measuring impact through visual excellence and strategic analysis.</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#portfolio" class="bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-full font-medium transition duration-300 hover:shadow-lg hover:shadow-amber-500/50">View Portfolio</a>
+                <a href="#contact" class="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-3 rounded-full font-medium transition duration-300 hover:shadow-lg hover:shadow-white/30">Get In Touch</a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+            <a href="#about" class="text-white animate-bounce">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/3 mb-10 lg:mb-0">
+                    <div class="relative rounded-lg overflow-hidden shadow-xl">
+                        <img src="https://z-p3-scontent.fmsu2-1.fna.fbcdn.net/v/t39.30808-6/472123961_1275593606825361_6542042574337617908_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeG_J0nN8Yt2m1SItX0tzNJb4oprU5cZa_fiimtTlxlr99z9kwkWZgoRO7xA7HPHtt7OzfhuXqhMTSmP4nesHiJ2&_nc_ohc=0AG4whr45ycQ7kNvwHIFjof&_nc_oc=Adlt_uFlBux5nXsxD5TFK2OIA7CuebXt0d3VikZW_X4MDGKE9a5gldcmIR821fc0Y8U&_nc_pt=5&_nc_zt=23&_nc_ht=z-p3-scontent.fmsu2-1.fna&_nc_gid=KA-Jh5BwYMYf7U8omsDg7g&oh=00_AfPSlJ1BKPdfYcnPUo0cySMqSWbD0uQ3Xj36K2E-GE5qYw&oe=6868353F" alt="Professional portrait of Mats'oele Monosi wearing stylish casual attire against a studio background, smiling confidently" class="w-full h-auto">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 hover:opacity-100 transition duration-500 flex items-end p-6">
+                            <div>
+                                <h3 class="text-white text-xl font-semibold">Mats'oele Monosi</h3>
+                                <p class="text-amber-300">Photographer & M&E Specialist</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-2/3 lg:pl-16">
+                    <h3 class="text-2xl font-semibold mb-6">Who Am I?</h3>
+                    <p class="text-gray-600 mb-6">I am a passionate visual storyteller with expertise in photography, content creation, and monitoring & evaluation. With a unique blend of creative vision and analytical skills, I bridge the gap between artistic expression and data-driven impact assessment.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-camera text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Photography</h4>
+                                <p class="text-gray-600">Specializing in portrait, event, and documentary photography with a focus on authentic storytelling.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-film text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Content Creation</h4>
+                                <p class="text-gray-600">Creating compelling visual content for brands, NGOs, and personal projects across digital platforms.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-chart-line text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Monitoring & Evaluation</h4>
+                                <p class="text-gray-600">Designing and implementing M&E systems to measure program effectiveness and social impact.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-lightbulb text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Creative Strategy</h4>
+                                <p class="text-gray-600">Developing innovative approaches to combine artistic vision with measurable outcomes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h4 class="font-semibold mb-4">My Skills</h4>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Photography</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-amber-500 h-2.5 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Video Production</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-amber-500 h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>M&E Systems</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-amber-500 h-2.5 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Content Strategy</span>
+                                    <span>88%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-amber-500 h-2.5 rounded-full" style="width: 88%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="inline-block bg-amber-500 hover:bg-amber-600 text-white px-6 py-3 rounded-full font-medium transition duration-300">Hire Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Experience & Education</h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-8 relative pl-10">
+                        <i class="fas fa-briefcase absolute left-0 top-1 text-amber-500"></i>
+                        Experience
+                    </h3>
+                    
+                    <div class="relative pl-10 timeline">
+                        <div class="mb-8 relative timeline-item">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <span class="text-sm text-amber-500">2018 - Present</span>
+                                <h4 class="font-semibold mt-1">Freelance Photographer & Content Creator</h4>
+                                <p class="text-gray-600 mt-2">Working with brands, NGOs, and individuals to create compelling visual content that tells powerful stories and drives engagement.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8 relative timeline-item">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <span class="text-sm text-amber-500">2016 - 2018</span>
+                                <h4 class="font-semibold mt-1">M&E Officer - Development Solutions Africa</h4>
+                                <p class="text-gray-600 mt-2">Designed and implemented monitoring frameworks for development programs, combining qualitative visual documentation with quantitative data analysis.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="relative timeline-item">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <span class="text-sm text-amber-500">2014 - 2016</span>
+                                <h4 class="font-semibold mt-1">Visual Media Specialist - Community Health Initiative</h4>
+                                <p class="text-gray-600 mt-2">Created health education materials and documented program implementation using photography and video, while contributing to impact evaluation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-semibold mb-8 relative pl-10">
+                        <i class="fas fa-graduation-cap absolute left-0 top-1 text-amber-500"></i>
+                        Education
+                    </h3>
+                    
+                    <div class="relative pl-10 timeline">
+                        <div class="mb-8 relative timeline-item">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <span class="text-sm text-amber-500">2019</span>
+                                <h4 class="font-semibold mt-1">Advanced Certificate in Monitoring & Evaluation</h4>
+                                <p class="text-gray-600 mt-2">University of Cape Town - Focused on innovative approaches to impact measurement including visual documentation as a data source.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8 relative timeline-item">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <span class="text-sm text-amber-500">2015</span>
+                                <h4 class="font-semibold mt-1">Diploma in Digital Photography</h4>
+                                <p class="text-gray-600 mt-2">New York Institute of Photography - Specialized in documentary and portrait photography techniques.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="relative timeline-item">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <span class="text-sm text-amber-500">2013</span>
+                                <h4 class="font-semibold mt-1">BSc in Development Studies</h4>
+                                <p class="text-gray-600 mt-2">University of Johannesburg - Combined social sciences with practical fieldwork documentation skills.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">My Portfolio</h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-6">A curated selection of my photographic work, content projects, and M&E documentation that demonstrates my versatile skill set.</p>
+            </div>
+            
+            <div class="flex justify-center mb-10">
+                <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="px-4 py-2 text-sm font-medium rounded-l-lg border border-gray-200 bg-amber-500 text-white focus:z-10 focus:outline-none filter-btn active" data-filter="all">
+                        All Work
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium border-t border-b border-gray-200 focus:z-10 focus:outline-none filter-btn" data-filter="photography">
+                        Photography
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium border border-gray-200 focus:z-10 focus:outline-none filter-btn" data-filter="content">
+                        Content Creation
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium rounded-r-lg border border-gray-200 focus:z-10 focus:outline-none filter-btn" data-filter="documentation">
+                        M&E Documentation
+                    </button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 portfolio-container">
+                <!-- Photography -->
+                <div class="portfolio-item group relative overflow-hidden rounded-lg shadow-md hover:shadow-lg hover:shadow-amber-500/30 transition-all duration-300" data-category="photography">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/560eb5f1-c178-4466-96d2-84d9cdd0b1ea.png" alt="Striking portrait of an elder with deep wrinkles and wise expression, shot in black and white with dramatic lighting" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 opacity-0 flex flex-col justify-center items-center text-center p-6 transition duration-300 transform translate-y-4">
+                        <h3 class="text-white text-xl font-semibold">Human Portraits</h3>
+                        <p class="text-gray-300 mt-2">A series capturing the dignity and character of individuals across Southern Africa.</p>
+                        <a href="#" class="mt-4 inline-block border border-white text-white hover:bg-white hover:text-gray-900 px-4 py-2 rounded-full text-sm transition duration-300">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Content Creation -->
+                <div class="portfolio-item group relative overflow-hidden rounded-lg shadow-md" data-category="content">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/aed97e89-c035-40fc-9ccd-6bd5ee7cdac4.png" alt="High-energy lifestyle content showing models using new sports apparel in urban park setting with vibrant colors" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 opacity-0 flex flex-col justify-center items-center text-center p-6 transition duration-300 transform translate-y-4">
+                        <h3 class="text-white text-xl font-semibold">Brand Campaign</h3>
+                        <p class="text-gray-300 mt-2">Vibrant lifestyle content for a sportswear brand's summer collection.</p>
+                        <a href="#" class="mt-4 inline-block border border-white text-white hover:bg-white hover:text-gray-900 px-4 py-2 rounded-full text-sm transition duration-300">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- M&E Documentation -->
+                <div class="portfolio-item group relative overflow-hidden rounded-lg shadow-md" data-category="documentation">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/75297597-af02-4fbb-a884-a6046b48254d.png" alt="Participatory rural appraisal session with farmers gathered around a hand-drawn map in village setting" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 opacity-0 flex flex-col justify-center items-center text-center p-6 transition duration-300 transform translate-y-4">
+                        <h3 class="text-white text-xl font-semibold">Community Engagement</h3>
+                        <p class="text-gray-300 mt-2">Documentation of participatory rural appraisal methodology in action.</p>
+                        <a href="#" class="mt-4 inline-block border border-white text-white hover:bg-white hover:text-gray-900 px-4 py-2 rounded-full text-sm transition duration-300">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Photography -->
+                <div class="portfolio-item group relative overflow-hidden rounded-lg shadow-md" data-category="photography">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d93ea7a2-35b5-4c70-a4c0-2e77486a1229.png" alt="Urban street photography series capturing vibrant market scenes with rich colors and cultural diversity" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 opacity-0 flex flex-col justify-center items-center text-center p-6 transition duration-300 transform translate-y-4">
+                        <h3 class="text-white text-xl font-semibold">Urban Stories</h3>
+                        <p class="text-gray-300 mt-2">Documentary series exploring daily life in Johannesburg's markets.</p>
+                        <a href="#" class="mt-4 inline-block border border-white text-white hover:bg-white hover:text-gray-900 px-4 py-2 rounded-full text-sm transition duration-300">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Content Creation -->
+                <div class="portfolio-item group relative overflow-hidden rounded-lg shadow-md" data-category="content">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e4ad84c6-d5b6-4eaa-b1f3-fde055047a2d.png" alt="Behind-the-scenes of cooking show production with chef demonstrating technique and crew capturing close-ups" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 opacity-0 flex flex-col justify-center items-center text-center p-6 transition duration-300 transform translate-y-4">
+                        <h3 class="text-white text-xl font-semibold">Culinary Series</h3>
+                        <p class="text-gray-300 mt-2">Behind-the-scenes and promotional content for a cooking show.</p>
+                        <a href="#" class="mt-4 inline-block border border-white text-white hover:bg-white hover:text-gray-900 px-4 py-2 rounded-full text-sm transition duration-300">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- M&E Documentation -->
+                <div class="portfolio-item group relative overflow-hidden rounded-lg shadow-md" data-category="documentation">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d1d41b19-b370-4fdd-a11c-805f3df1613a.png" alt="Success metrics infographic wall display showing program impact statistics while beneficiaries interact with content" class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 opacity-0 flex flex-col justify-center items-center text-center p-6 transition duration-300 transform translate-y-4">
+                        <h3 class="text-white text-xl font-semibold">Impact Visualization</h3>
+                        <p class="text-gray-300 mt-2">Creative presentation of evaluation findings through visual storytelling.</p>
+                        <a href="#" class="mt-4 inline-block border border-white text-white hover:bg-white hover:text-gray-900 px-4 py-2 rounded-full text-sm transition duration-300">View Project</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white rounded-full font-medium transition duration-300">
+                    View Full Portfolio
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">My Services</h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-6">Comprehensive offerings that combine creative excellence with measurable impact, tailored to your specific needs.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-700 p-8 rounded-lg shadow-md hover:shadow-lg hover:shadow-amber-500/20 transition duration-300 border border-gray-600 hover:border-amber-500">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-camera text-amber-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Professional Photography</h3>
+                    <ul class="space-y-3 text-gray-600 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-500 mr-2 mt-1"></i>
+                            <span>Portrait & Event Photography</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-500 mr-2 mt-1"></i>
+                            <span>Documentary & Editorial Work</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-500 mr-2 mt-1"></i>
+                            <span>Product & Commercial Shoots</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="text-amber-500 font-medium inline-flex items-center">
+                        Learn More
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-video text-amber-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Content Creation</h3>
+                    <ul class="space-y-3 text-gray-600 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-500 mr-2 mt-1"></i>
+                            <span>Social Media Content Development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-500 mr-2 mt-1"></i>
+                            <span>Brand Storytelling & Campaigns</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-500 mr-2 mt-1"></i>
+                            <span>Video Production & Editing</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="text-amber-500 font-medium inline-flex items-center">
+                        Learn More
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-pie text-amber-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">M&E Services</h3>
+                    <ul class="space-y-3 text-gray-600 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-500 mr-2 mt-1"></i>
+                            <span>Program Design & Evaluation Frameworks</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-500 mr-2 mt-1"></i>
+                            <span>Visual Documentation for Impact Assessment</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-amber-500 mr-2 mt-1"></i>
+                            <span>Data Visualization & Reporting</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="text-amber-500 font-medium inline-flex items-center">
+                        Learn More
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Client Testimonials</h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-6">What clients and collaborators say about working with me.</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="relative">
+                    <div class="glide__track" data-glide-el="track">
+                        <div class="glide__slides">
+                            <div class="glide__slide">
+                                <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                                    <div class="flex items-center mb-6">
+                                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/167a8c61-26cd-4a2e-b890-12ca91b78bfc.png" alt="Portrait of Thandiwe Nkosi, Marketing Director at UrbanEdge wearing professional attire and smiling confidently" class="w-16 h-16 rounded-full object-cover">
+                                        <div class="ml-4">
+                                            <h4 class="font-semibold">Thandiwe Nkosi</h4>
+                                            <p class="text-gray-500 text-sm">Marketing Director, UrbanEdge</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-gray-700">
+                                        <p>"Mats'oele transformed our brand campaign with his exceptional eye for detail. His photos weren't just beautiful - they told our story in ways we hadn't imagined. The combination of technical skill and creative vision is rare, and the campaign results speak for themselves."</p>
+                                    </div>
+                                    <div class="flex mt-4">
+                                        <i class="fas fa-star text-amber-400"></i>
+                                        <i class="fas fa-star text-amber-400"></i>
+                                        <i class="fas fa-star text-amber-400"></i>
+                                        <i class="fas fa-star text-amber-400"></i>
+                                        <i class="fas fa-star text-amber-400"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="glide__slide">
+                                <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                                    <div class="flex items-center mb-6">
+                                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6e57f971-1adf-46c9-8777-5569f0fa7023.png" alt="Portrait of David Mbeki, Program Manager at HealthForAll wearing casual smart attire with thoughtful expression" class="w-16 h-16 rounded-full object-cover">
+                                        <div class="ml-4">
+                                            <h4 class="font-semibold">David Mbeki</h4>
+                                            <p class="text-gray-500 text-sm">Program Manager, HealthForAll</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-gray-700">
+                                        <p>"Working with Mats'oele on our M&E documentation was game-changing. He understands both the technical requirements of monitoring systems and how to communicate impact visually. Our donor reports have never been more compelling or evidence-based."</p>
+                                    </div>
+                                    <div class="flex mt-4">
+                                        <i class="fas fa-star text-amber-400"></i>
+                                        <i class="fas fa-star text-amber-400"></i>
+                                        <i class="fas fa-star text-amber-400"></i>
+                                        <i class="fas fa-star text-amber-400"></i>
+                                        <i class="fas fa-star text-amber-400"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="glide__slide">
+                                <div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+                                    <div class="flex items-center mb-6">
+                                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fdc8a1a6-6f8c-4415-b77c-e7a74f733c1f.png" alt="Portrait of Lindiwe Khumalo, Founder of Heritage Roots wearing traditional-inspired modern fashion with confident smile" class="w-16 h-16 rounded-full object-cover">
+                                        <div class="ml-4">
+                                            <h4 class="font-semibold">Lindiwe Khumalo</h4>
+                                            <p class="text-gray-500 text-sm">Founder, Heritage Roots</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-gray-700">
+                                        <p>"From our first conversation, Mats'oele understood exactly what we needed to elevate our content. His ability to capture authentic cultural moments while maintaining commercial appeal gave our startup the professional edge we needed. He's become an integral part of our creative team."</p>
+                                    </div>
+                                    <div class="flex mt-4">
+                                        <i class="fas fa-star text-amber-400"></i>
+                                        <i class="fas fa-star text-amber-400"></i>
+                                        <i class="fas fa-star text-amber-400"></i>
+                                        <i class="fas fa-star text-amber-400"></i>
+                                        <i class="fas fa-star text-amber-400"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glide__bullets mt-8 flex justify-center space-x-2" data-glide-el="controls[nav]">
+                        <button class="glide__bullet w-3 h-3 rounded-full bg-gray-300" data-glide-dir="=0"></button>
+                        <button class="glide__bullet w-3 h-3 rounded-full bg-gray-300" data-glide-dir="=1"></button>
+                        <button class="glide__bullet w-3 h-3 rounded-full bg-gray-300" data-glide-dir="=2"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Statistics Section -->
+    <section class="py-16 bg-amber-500 text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4">
+                    <div class="text-4xl font-bold mb-2" data-count="150">0</div>
+                    <div class="text-sm uppercase tracking-wider">Projects Completed</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold mb-2" data-count="80">0</div>
+                    <div class="text-sm uppercase tracking-wider">Happy Clients</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold mb-2" data-count="12">0</div>
+                    <div class="text-sm uppercase tracking-wider">Countries Worked</div>
+                </div>
+                <div class="p-4">
+                    <div class="text-4xl font-bold mb-2" data-count="5">0</div>
+                    <div class="text-sm uppercase tracking-wider">Awards Won</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-6">Have a project in mind or want to discuss how we can work together? Reach out through the form below or connect via my social profiles.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-8">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent" required>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent" required>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-white px-6 py-4 rounded-lg font-medium transition duration-300">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="lg:w-1/2 lg:pl-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-amber-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Location</h4>
+                                    <p class="text-gray-600">Maseru, Lesotho</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-amber-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Email</h4>
+                                    <p class="text-gray-600">wave@matsmonosi.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt text-amber-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Phone</h4>
+                                    <p class="text-gray-600">+266 57886237</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-amber-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-globe text-amber-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Social Media</h4>
+                                    <div class="flex space-x-4 mt-2">
+                                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-amber-500 hover:text-white transition duration-300">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-amber-500 hover:text-white transition duration-300">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-amber-500 hover:text-white transition duration-300">
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </a>
+                                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-amber-500 hover:text-white transition duration-300">
+                                            <i class="fab fa-behance"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold">
+                        <span class="text-amber-500">Mats'oele</span> Monosi
+                    </a>
+                    <p class="text-gray-400 mt-2">Visual Storytelling Meets Strategic Insight</p>
+                </div>
+                
+                <div class="flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0 text-center md:text-left">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-gray-400 hover:text-amber-400 transition duration-300">Home</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-amber-400 transition duration-300">About</a></li>
+                            <li><a href="#portfolio" class="text-gray-400 hover:text-amber-400 transition duration-300">Portfolio</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-amber-400 transition duration-300">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3">Services</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#services" class="text-gray-400 hover:text-amber-400 transition duration-300">Photography</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-amber-400 transition duration-300">Content Creation</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-amber-400 transition duration-300">M&E Documentation</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-amber-400 transition duration-300">Privacy Policy</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-amber-400 transition duration-300">Terms of Service</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-amber-400 transition duration-300">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 Mats'oele Monosi. All rights reserved.</p>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-amber-400 transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-amber-400 transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-amber-400 transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-amber-400 transition duration-300">
+                        <i class="fab fa-behance"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        });
+        
+        // Active nav link
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+        
+        window.addEventListener('scroll', function() {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Portfolio filter
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active', 'bg-amber-500', 'text-white'));
+                
+                // Add active class to clicked button
+                this.classList.add('active', 'bg-amber-500', 'text-white');
+                
+                const filterValue = this.getAttribute('data-filter');
+                
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Testimonials slider
+        new Glide('.glide', {
+            type: 'carousel',
+            perView: 1,
+            autoplay: 3000,
+            hoverpause: true,
+            gap: 20,
+            breakpoints: {
+                768: {
+                    perView: 1
+                }
+            }
+        }).mount();
+        
+        // Typed text effect
+        class TypeWriter {
+            constructor(txtElement, words, wait = 3000) {
+                this.txtElement = txtElement;
+                this.words = words;
+                this.txt = '';
+                this.wordIndex = 0;
+                this.wait = parseInt(wait, 10);
+                this.type();
+                this.isDeleting = false;
+            }
+            
+            type() {
+                const current = this.wordIndex % this.words.length;
+                const fullTxt = this.words[current];
+                
+                if (this.isDeleting) {
+                    this.txt = fullTxt.substring(0, this.txt.length - 1);
+                } else {
+                    this.txt = fullTxt.substring(0, this.txt.length + 1);
+                }
+                
+                this.txtElement.innerHTML = `<span>${this.txt}</span>`;
+                
+                let typeSpeed = 200;
+                
+                if (this.isDeleting) {
+                    typeSpeed /= 2;
+                }
+                
+                if (!this.isDeleting && this.txt === fullTxt) {
+                    typeSpeed = this.wait;
+                    this.isDeleting = true;
+                } else if (this.isDeleting && this.txt === '') {
+                    this.isDeleting = false;
+                    this.wordIndex++;
+                    typeSpeed = 500;
+                }
+                
+                setTimeout(() => this.type(), typeSpeed);
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', init);
+        
+        function init() {
+            const txtElement = document.querySelector('.typed-text');
+            const words = JSON.parse(txtElement.getAttribute('data-typed'));
+            const wait = txtElement.getAttribute('data-wait');
+            
+            new TypeWriter(txtElement, words, wait);
+            
+            // Counter animation
+            const counters = document.querySelectorAll('[data-count]');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-count');
+                    const count = +counter.innerText;
+                    
+                    const inc = target / speed;
+                    
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                
+                updateCount();
+            });
+        }
+    </script>
+</body>
+</html>
+
